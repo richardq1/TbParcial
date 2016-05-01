@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+    </head>
+    <body>
+        {% load staticfiles %}
+        <script type="text/javascript" src="{% static 'phaser.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'states/Game.js' %}"></script>
+         <script type="text/javascript" src="{% static 'states/Preload.js' %}"></script>
+        <script type="text/javascript" src="{% static 'main.js' %}"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+        
+    <script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '{{ app_id }}',
+      xfbml      : true,
+      version    : 'v2.5'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+<div id="url" data-url="{% url 'home'  %}"> </div>
+    </body>
+</html>
